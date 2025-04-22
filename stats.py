@@ -15,8 +15,10 @@ def char_freq(book):
 def sort_dict(dict):
     dict_list = []
     for k in dict:
-        new_dict = "character"
-
+        new_dict = {"character": k, "num": dict[k]}
+        dict_list.append(new_dict)
+    dict_list.sort(reverse=True, key=sort_on)
+    return dict_list
 
 def sort_on(dict):
     return dict["num"]
